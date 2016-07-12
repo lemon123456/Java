@@ -1,0 +1,26 @@
+<div>
+    <div ng-repeat="book in books">
+        <div class="col-md-4">
+            <a href="#/books/{{book.id}}">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <img class="thumbnailsImage" src="../images/thumbnails/{{book.asin}}.jpg">
+                    </div>
+                    <div class="panel-footer thumbnailsImageFooter">
+                        <div>{{book.title}}</div>
+                        <div>
+                            <div class="col-md-8">{{book.author}}</div>
+                            <div class="col-md-4">{{book.publishedAt}}</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <ul class="pagination">
+        <li ng-repeat="page in getTotalPages()">
+            <a href="javascript:void(0)" ng-click="setPage(page)">{{page}}</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/books.css"/>
+</head>
+
+<body ng-app="BookishApp">
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand">Bookish</span>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Home</a>
+            </div>
+
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/books?page=0">Books</a>
+            </div>
+
+        </div>
+    </nav>
+</div>
+
+<div ng-view="">
+    
+</div>
+
+<script src="/webjars/jquery/1.11.1/jquery.js"></script>
+<script src="/webjars/angularjs/1.5.7/angular.js"></script>
+<script src="/webjars/angularjs/1.5.7/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.5.7/angular-route.js"></script>
+<script src="/webjars/bootstrap/3.3.6/js/bootstrap.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/service/bookService.js"></script>
+<script src="app/controller/bookController.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+Step 1: Login to MySQL
+
+    $ mysql.server start
+    $ mysql -u root -p
+
+Step 2: Create the Database
+
+    mysql > create database bookish;
+
+Step 3: Verify that it's there
+
+    mysql > show databases;
+
+Step 4: Create the User
+
+    mysql > create user bookish_admin;
+
+Step 5: Grant privileges while assigning the password
+
+    mysql > grant all on bookish.* to 'bookish_admin'@'localhost' identified by 'password';
+or
+    mysql > grant select, insert, delete, update on bookish.* to 'bookish_admin'@'localhost' identified by 'password';
+
+
+> ALTER USER 'bookish_admin'@'localhost' IDENTIFIED BY 'password';
+> DROP USER 'bookish_admin'@'localhost';
+
+CREATE TABLE books (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    published_at DATE NOT NULL,
+    isbn VARCHAR(255) NOT NULL,
+    asin VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+LOAD DATA INFILE '/Users/twer/Documents/Workshop/xjxu/Bookish/Database/books.csv'
+INTO TABLE books
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+(title, author, published_at, isbn, asin)
+SET ID = NULL;
